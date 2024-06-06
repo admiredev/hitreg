@@ -1,6 +1,7 @@
 local function handleWeaponDamage(sender, data)
     local senderPed = GetPlayerPed(sender)
-    if data.hitComponent ~= 20 or (not IsPedAPlayer(senderPed)) then
+    
+    if data.hitComponent ~= 20 or (not IsPedAPlayer(senderPed) or not IsEntityVisible(senderPed)) then
         return
     end
 
